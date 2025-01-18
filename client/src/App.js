@@ -7,14 +7,21 @@ function App() {
   // do some stuff
 
   const [display, setDisplay] = useState('');
+  //const [value, setValue] = useState('');
 
   const handleButtonClick = (val) => {
     setDisplay(display + val);
-
+    //setValue(value + val);
   }
 
   const onSubmit = async () => {
-    
+    try {
+      const response = await axios.post('http://127.0.0.1:5000/api/math', {input: display});
+      setDisplay(response.data);
+    }
+    catch(error){
+      console.error('Error', error);
+    }
   }
    
   return (
