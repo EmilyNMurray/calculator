@@ -10,5 +10,5 @@ def process_math():
         return jsonify(return_value)
 
 if __name__=="__main__":
-            app.run(debug=True)
+        app.run(debug=True)
 
